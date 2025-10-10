@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Dashboard</h2>
+    <a href="backend/logout.php">Logout</a>
+    <div id="ticket-container">Tickets werden geladen...</div>
+  </div>
+  <script>
+    // einfache Escaping-Funktion gegen XSS
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    async function ladeTickets() {
+      try {
+        const response = await fetch('backend/tickets.json');
+        if (!response.ok) throw new Error("Fehler beim Laden der Datei");
+
+        const tickets = await response.json();
+        const container = document.getElementById('ticket-container');
+        container.innerHTML = '';
+
+        if (!Array.isArray(tickets) || tickets.length === 0) {
+          container.innerHTML = '<p>Aktuell keine Tickets vorhanden.</p>';
+          return;
+        }
+
+        tickets.forEach(ticket => {
+          const div = document.createElement('div');
+          div.className = 'ticket';
+          const date = ticket.created_at || ticket.date || '';
+          const room = ticket.room || ticket.raum || '';
+
+          div.innerHTML = `
+            <h3>${escapeHtml(ticket.title || '')}</h3>
+            <p><strong>Kategorie:</strong> ${escapeHtml(ticket.category || '')}</p>
+            ${room ? `<p><strong>Raum:</strong> ${escapeHtml(room)}</p>` : ""}
+            <p>${escapeHtml(ticket.description || '')}</p>
+            <p><em>${escapeHtml(date)}</em></p>
+          `;
+          container.appendChild(div);
+        });
+      } catch (error) {
+        document.getElementById('ticket-container').innerHTML = 'Fehler beim Laden der Tickets: ' + error.message;
+        console.error(error);
+      }
+    }
+
+    ladeTickets();
+  </script>
+</body>
+</html>

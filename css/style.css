@@ -1,0 +1,168 @@
+/* Grundstyles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  padding: 2rem;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.header-with-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-with-image img {
+  height: 60px;
+}
+
+/* Formular Styles */
+input, textarea, select, button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #2b79c2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d5fa0;
+}
+
+/* Login Button (Index-Seite) */
+.login-btn {
+  display: inline-block;
+  padding: 12px 400px;
+  background: #2b79c2;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-btn:hover {
+  background: #1d5fa0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Logout Button */
+.logout-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.logout-btn:hover {
+  background: #e60000;
+  transform: scale(1.05);
+}
+
+/* Tickets */
+.ticket {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ticket h3 {
+  margin-top: 0;
+  color: #2b79c2;
+}
+
+.ticket p {
+  margin: 0.3rem 0;
+}
+
+/* Status Labels */
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* Logout Button */
+.logout-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.logout-btn:hover {
+    background: #e60000;
+    transform: scale(1.05);
+}
+
+/* Tickets */
+.ticket {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ticket h3 {
+    margin-top: 0;
+    color: #2b79c2;
+}
+
+.ticket p {
+    margin: 0.3rem 0;
+}
+
+/* Status Labels */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.status.To-Do { background: #ffcccc; color: #a00; }
+.status.InProgress { background: #fff3cd; color: #856404; }
+.status.Done { background: #d4edda; color: #155724; }
