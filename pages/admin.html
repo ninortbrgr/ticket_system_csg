@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <div class="container">
     <h2>Admin Dashboard</h2>
-    <a href="backend/logout.php">Logout</a>
+    <a href="../php/logout.php">Logout</a>
     <div id="ticket-container">Tickets werden geladen...</div>
   </div>
   <script>
@@ -25,7 +25,7 @@
 
     async function ladeTickets() {
       try {
-        const response = await fetch('backend/tickets.json');
+        const response = await fetch('../data/tickets.json');
         if (!response.ok) throw new Error("Fehler beim Laden der Datei");
 
         const tickets = await response.json();

@@ -22,7 +22,7 @@ $newTicket = [
     'date' => $date
 ];
 
-$ticketsPath = __DIR__ . '/tickets.json';
+$ticketsPath = __DIR__ . '../data/tickets.json';
 $tickets = [];
 
 if (file_exists($ticketsPath)) {
@@ -36,5 +36,5 @@ $tickets[] = $newTicket;
 file_put_contents($ticketsPath, json_encode($tickets, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
 
 // Redirect zurück ins Dashboard oder zur Hauptseite
-header('Location: ../ticket_submit.html?success=1');
+header('Location: ../pages/ticket_submit.html?success=1');
 exit;

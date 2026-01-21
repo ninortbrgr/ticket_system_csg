@@ -7,14 +7,14 @@ document.getElementById("loginForm").addEventListener("submit", async function (
   formData.append("username", username);
   formData.append("password", password);
 
-  const response = await fetch("backend/login.php", {
+  const response = await fetch("../php/login.php", {
     method: "POST",
     body: formData
   });
 
   const result = await response.json();
   if (result.success) {
-    window.location.href = "admin.php";
+    window.location.href = "../php/admin.php";
   } else {
     document.getElementById("errorMsg").innerText = "Login fehlgeschlagen!";
   }

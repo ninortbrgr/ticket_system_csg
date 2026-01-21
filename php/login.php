@@ -4,7 +4,7 @@ session_start();
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
-$usersFile = __DIR__ . "/users.json";
+$usersFile = __DIR__ . "../data/users.json";
 if (!file_exists($usersFile)) {
     die("Benutzerdaten fehlen!");
 }
@@ -24,9 +24,9 @@ if (is_array($users)) {
 if ($loginOk) {
     $_SESSION['loggedIn'] = true;
     $_SESSION['username'] = $username;
-    header("Location: ../admin.php");
+    header("Location: ./admin.php");
     exit;
 } else {
-    header("Location: ../login.html?error=1");
+    header("Location: ../pages/login.html?error=1");
     exit;
 }

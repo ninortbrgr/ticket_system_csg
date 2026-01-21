@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['user_id'])){
-    header("Location: login.html");
+    header("Location: ../pages/login.html");
     exit;
 }
 echo "Willkommen im Dashboard, ".$_SESSION['role']."!";
@@ -82,7 +82,7 @@ echo "Willkommen im Dashboard, ".$_SESSION['role']."!";
   <a href="#" data-section="tickets">Tickets</a>
   <a href="#" data-section="users">Benutzer</a>
   <a href="#" data-section="settings">Persönliche Einstellungen</a>
-  <a href="backend/logout.php">Logout</a>
+  <a href="./logout.php">Logout</a>
 </div>
 
 <div class="content" id="main-content">
@@ -90,7 +90,7 @@ echo "Willkommen im Dashboard, ".$_SESSION['role']."!";
   <div class="welcome-box">
     <h2>Admin Dashboard</h2>
     <p>Angemeldet als: <?= htmlspecialchars($_SESSION["username"]) ?></p>
-    <a href="backend/logout.php">Logout</a>
+    <a href="./logout.php">Logout</a>
   </div>
 </div>
 
@@ -114,10 +114,10 @@ echo "Willkommen im Dashboard, ".$_SESSION['role']."!";
               <h2>Willkommen, ${username}!</h2>
               <p>Hier siehst du eine Übersicht und kannst über die Buttons neue Bereiche öffnen:</p>
               <div class="button-panel">
-                <button onclick="window.location.href='users.php'">Benutzer erstellen</button>
-                <button onclick="window.location.href='admin.php'">Tickets verwalten</button>
-                <button onclick="window.location.href='deleted_tickets.php'">Gelöschte Tickets</button>
-                <button onclick="window.location.href='settings.php'">Persönliche Einstellungen</button>
+                <button onclick="window.location.href='./users.php'">Benutzer erstellen</button>
+                <button onclick="window.location.href='./admin.php'">Tickets verwalten</button>
+                <button onclick="window.location.href='./deleted_tickets.php'">Gelöschte Tickets</button>
+                <button onclick="window.location.href='./settings.php'">Persönliche Einstellungen</button>
               </div>
             </div>`;
           break;

@@ -13,7 +13,7 @@ if($index === null){
     exit;
 }
 
-$ticketsPath = __DIR__ . '/tickets.json';
+$ticketsPath = __DIR__ . '../data/tickets.json';
 $tickets = [];
 
 if(file_exists($ticketsPath)){

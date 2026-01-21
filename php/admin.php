@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["loggedIn"])) {
-    header("Location: login.html");
+    header("Location: ../pages/login.html");
     exit;
 }
 ?>
@@ -10,7 +10,7 @@ if (!isset($_SESSION["loggedIn"])) {
 <head>
   <meta charset="UTF-8">
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="container-dashboard">
@@ -19,7 +19,7 @@ if (!isset($_SESSION["loggedIn"])) {
       <img src="img/csg.png" width="100" />
     </div>
 
-    <a href="backend/logout.php" class="logout-btn">Logout</a>
+    <a href="../php/logout.php" class="logout-btn">Logout</a>
 
     <div class="dashboard">
       <!-- Linke Ticket-Übersicht -->
@@ -40,7 +40,7 @@ let tickets = [];
 
 async function ladeTickets() {
     try {
-        const response = await fetch('backend/tickets.json?ts=' + Date.now(), {cache:"no-store"});
+        const response = await fetch('../data/tickets.json?ts=' + Date.now(), {cache:"no-store"});
         tickets = await response.json();
 
         const ul = document.getElementById('tickets-ul');
@@ -91,7 +91,7 @@ function showTicketDetails(index) {
         const newStatus = document.getElementById('status-select').value;
         ticket.status = newStatus;
 
-        const res = await fetch('backend/update_ticket.php', {
+        const res = await fetch('./update_ticket.php', {
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({index, ticket})
@@ -108,7 +108,7 @@ function showTicketDetails(index) {
     document.getElementById('delete-ticket').addEventListener('click', async () => {
         if(!confirm("Ticket wirklich löschen?")) return;
 
-        const res = await fetch('backend/delete_ticket.php', {
+        const res = await fetch('./backend/delete_ticket.php', {
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({index})
