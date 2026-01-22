@@ -4,7 +4,7 @@ session_start();
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
-$usersFile = __DIR__ . "../data/users.json";
+$usersFile = "../data/users.json";
 if (!file_exists($usersFile)) {
     die("Benutzerdaten fehlen!");
 }

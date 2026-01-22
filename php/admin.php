@@ -16,7 +16,7 @@ if (!isset($_SESSION["loggedIn"])) {
   <div class="container-dashboard">
     <div class="header-with-image">
       <h2>Admin Dashboard</h2>
-      <img src="img/csg.png" width="100" />
+      <img src="../img/csg.png" width="100" />
     </div>
 
     <a href="../php/logout.php" class="logout-btn">Logout</a>
