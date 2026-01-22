@@ -108,7 +108,7 @@ function showTicketDetails(index) {
     document.getElementById('delete-ticket').addEventListener('click', async () => {
         if(!confirm("Ticket wirklich löschen?")) return;
 
-        const res = await fetch('./backend/delete_ticket.php', {
+        const res = await fetch('./delete_ticket.php', {
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({index})
