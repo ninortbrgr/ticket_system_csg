@@ -1,2 +1,1 @@
-/data/users.json
-/data/tickets.json
+./data/*
