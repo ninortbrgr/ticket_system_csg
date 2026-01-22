@@ -22,7 +22,7 @@ $newTicket = [
     'date' => $date
 ];
 
-$ticketsPath = __DIR__ . '../data/tickets.json';
+$ticketsPath ='../data/tickets.json';
 $tickets = [];
 
 if (file_exists($ticketsPath)) {
