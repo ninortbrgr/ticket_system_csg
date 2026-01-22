@@ -13,7 +13,7 @@ if (!isset($_SESSION["loggedIn"])) {
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <div class="container-dashboard">
+  <div class="container">
     <div class="header-with-image">
       <h2>Admin Dashboard</h2>
       <img src="../img/csg.png" width="100" />
