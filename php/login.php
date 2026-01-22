@@ -23,7 +23,7 @@ if (is_array($users)) {
 
 if ($loginOk) {
     $_SESSION['loggedIn'] = true;
-    $_SESSION['username'] = $username;
+    $_SESSION['user_id'] = $username;
     header("Location: ./admin.php");
     exit;
 } else {
