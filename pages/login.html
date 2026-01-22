@@ -12,14 +12,14 @@
       <h2>Admin Login</h2>
       <img src="../img/csg.png" width="100" />
     </div>
-    <form id="loginForm" action="../php/login.php" method="post">
-      <label for="username">Benutzername</label>
+    <form id="loginForm"> 
       <input type="text" id="username" name="username" required />
       <label for="password">Passwort</label>
       <input type="password" id="password" name="password" required />
       <button type="submit">Einloggen</button>
     </form>
+     <p id="errorMsg" style="color: red;"></p>
   </div>
-  <!--<script src="../js/login.js"></script>-->
+  <script src="../js/login.js"></script>
 </body>
 </html>
