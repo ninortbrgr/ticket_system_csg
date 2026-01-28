@@ -11,7 +11,7 @@ if ($pass === $try) {
 
 if ($unlocked) {
     $_SESSION['unlocked'] = true;
-    header("Location: ./ticket_lock.php");
+    header("Location: ./ticket_submit.php");
     exit;
 } else {
     header("Location: ../index.html?error=1");

@@ -11,6 +11,7 @@ if (!isset($_SESSION["loggedIn"])) {
   <meta charset="UTF-8">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
   <div class="container">
