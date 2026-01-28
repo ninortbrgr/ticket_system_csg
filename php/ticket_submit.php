@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["unlocked"])) {
-    header("Location: ../index.html");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
